@@ -113,7 +113,7 @@ local devs = mtkwifi.get_all_devs()
                             <% end %>
                         </td>
                         <td style="text-align:right">
-                            <input class="cbi-button cbi-button-reset" style="width:100px" title="禁用无线" value="禁用中继" type="button" onclick="location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi", "vif_disable", dev.apcli.vifname)%>'" />
+                            <input class="cbi-button cbi-button-reset" style="width:100px" title="禁用无线" value="禁用中继" type="button" onclick="location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi", "apcli_disconnect", dev.devname, dev.apcli.vifname)%>'" />
 
                             <% if dev.apcli.status == "Connected" then %>
                             <input class="cbi-button cbi-button-remove" style="width:100px" title="重启无线" value="断开中继" type="button" onclick='wifi_reload("<%=luci.dispatcher.build_url("admin", "network", "wifi", "apcli_disconnect", dev.devname, dev.apcli.vifname)%>")' />
